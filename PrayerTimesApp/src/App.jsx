@@ -4,8 +4,13 @@ import Prayer from "./components/prayer";
 function App() {
   const [timings, setTimings] = useState([]);
   const [city, setCity] = useState("Cairo");
-  const [date, setDate] = useState("2025-07-23"); // Default format for input[type="date"]
-
+const [date, setDate] = useState(() => {
+  const now = new Date();
+  const yyyy = now.getFullYear();
+  const mm = String(now.getMonth() + 1).padStart(2, '0');
+  const dd = String(now.getDate()).padStart(2, '0');
+  return `${yyyy}-${mm}-${dd}`;
+});
   const prayers = [
     { name: "الفجر", key: "Fajr" },
     { name: "الظهر", key: "Dhuhr" },
