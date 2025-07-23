@@ -48,14 +48,20 @@ section {
 }
 
 .top_sec select {
-  border-radius: 5px;
+  border-radius: 6px;
   outline: none;
   width: 200px;
   font-size: 18px;
   background-color: #b46118;
   color: #fff;
-  padding: 8px;
-  border: none;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  transition: border 0.3s;
+}
+
+.top_sec select:focus {
+  border-color: #fff;
+  outline: none;
 }
 
 .top_sec h3 {
